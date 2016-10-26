@@ -9,15 +9,15 @@
     /* @ngInject */
     function ShellController($rootScope, $timeout, config, logger) {
         var vm = this;
+        hideSplash();
         vm.busyMessage = 'Please wait ...';
-        vm.isBusy = true;
-        $rootScope.showSplash = true;
+        vm.isBusy = false;
+        $rootScope.showSplash = false;
         vm.navline = {
             title: config.appTitle,
             text: 'Developed with generator-angular-crud',
             link: 'https://github.com/jlmonteagudo/generator-angular-crud'
         };
-
         activate();
 
         function activate() {
